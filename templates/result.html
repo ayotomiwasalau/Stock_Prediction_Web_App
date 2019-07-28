@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+  
+
+
+{% block message %}
+        <style>
+                .box{
+                	width:350px;
+                	height:100px;
+                }
+
+                .red{
+                	background:#0000ff;
+                }
+        </style>
+
+        <div class = 'box red'>
+                <hr />
+                <h4 class="text-center" style="color:white">Stock Price for {{stock_symbol}} on {{prediction_date}}</h4>
+                <h3 class="text-center" style="color:white">${{stock_predict}}</h3>
+        </div>
+{% endblock %}
+        
+
+
+
+
+
+{% block content %}        
+    <div class="chart" id="scattergraph">
+            <script>
+                var graphs = {{graphJSON | safe}};
+                
+                Plotly.plot("scattergraph", graphs, {
+                'title': 'Stock Price Forecast Chart',
+                'xaxis': {
+                    'title': "Date"
+                },
+                'yaxis': {
+                    'title': "Price"
+                }
+            })
+                
+            ;
+                
+            </script>
+    </div>
+
+{% endblock %}
+
+{% for id in ids %}
+<div id="{{id}}"></div>
+{% endfor %}
+
+            
+    
+

@@ -1,0 +1,107 @@
+
+<!doctype html>
+<html>
+    <head>
+        <title>
+                Stock Predictor   
+        </title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    </head>
+    <body> 
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="/">Stock Prediction</a>
+                        </div>
+                        <div id="navbar" class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="https://github.com/AyonzOnTop">Tomiwa Github</a></li>
+                                <li><a href="https://linkedin.com/in/ayotomiwa-salau">Tomiwa Linkedin </a></li>
+                            </ul>
+                        </div>
+                    </div>  
+            </nav>
+
+
+
+
+        <div class = 'container'>
+                <div class="jumbotron">
+                        <h2 class="text-left">
+                            Stock Price Prediction App
+                        </h2>
+                        <p class="text-left">
+                            Predict future stock prices for companies
+                        </p>
+                </div>
+                
+
+                {% block message %}
+                {% endblock %}
+                
+                <div class = "row 10">
+                        
+                        <div class = "col-lg-12 form-group-lg">
+                            {% block content %}
+                            <form action="/result.html" method="get" id="input_entry">
+                                Company Name: <input type="text" class = "form-control form-group-lg" name="companyname" placeholder="Enter company ticker symbol"><br>
+                                Reference Period:<br>
+                                <div class = 'row'>
+                                        <div class="form-group name1 col-md-6">
+                                            Start Date: <input type="date" class = "form-control form-group-lg" name="ReferenceStartPeriod" placeholder="Enter start date for Reference Period"><br>
+                                        </div>
+                                        <div class="form-group name2 col-md-6">
+                                            *End Date: <input type="date" class = "form-control form-group-lg" name="ReferenceEndPeriod" placeholder="Enter end date for Reference Period"><br>
+                                        </div>
+                                </div>
+                                Predict Date: <input type="date" class = "form-control form-group-lg" name="PredictionDate" placeholder="Enter date to predict stock price"><br>
+                                
+            
+                                <div class = "col-lg-offset-5">
+                                    
+                                    <button type="submit" form="input_entry" class="btn btn-lg btn-success" value="Submit">Build Model</button>  
+                                </div>
+                               
+                            </form>
+                            {% endblock %} 
+                              
+                            
+                            <a href="/" class = "homepage">Stock Value Prediction</a><br> 
+                            <class style="font-size: 12px" >
+                                    *End Date should not exceed 27-03-2018
+                            </class>
+                        </div>
+                        
+
+                        
+                </div>
+                
+                    
+        </div>
+
+
+        
+
+              
+        
+        <div class="graph-box animated fadeInUp l-box">
+                <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+        
+    </body>
+    <marquee class = "bottombar">Stock values are subjected to market risk. Prediction is based on machine learning models. Please invest with due discretion.</marquee>
+</html>
+
+
