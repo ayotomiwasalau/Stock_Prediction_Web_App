@@ -33,12 +33,16 @@ SARIMA (Seasonal Autoregressive Integrated Moving Average)
 * pandas.tseries.offsets.DateOffset
 * plotly.graph_objs.Scatter
 
+### Summary of Output
+![alt text](https://raw.githubusercontent.com/AyonzOnTop/Stock_Prediction_Web_App/static/Screenshot(154).png)
+![alt text](https://raw.githubusercontent.com/AyonzOnTop/Stock_Prediction_Web_App/static/Screenshot(155).png)
+
 ## Steps to run the code
 * Clone the github and goto folder
 * install the required dependencies
 * Run Stock Market Prediction/app.py - this starts the http server using python flask
 * Open the port on the browser and use the site
 
-Summary of Output
+
 
 
