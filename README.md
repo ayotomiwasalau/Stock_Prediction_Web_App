@@ -1,4 +1,6 @@
 ﻿# Stock Price Prediction App
+ 
+### [link to app](http://stockpredapp.herokuapp.com/)
 
 A simple web based product using machine learning to predict the future stock values based on historical values 
 
